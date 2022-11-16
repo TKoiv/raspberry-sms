@@ -4,9 +4,10 @@ from datetime import datetime
 import smsCom
 import time
 from multiprocessing import Process
+import phonenumber as pnumber
 
 global phone_number
-phone_number = '+358407308301'
+phone_number = pnumber.phone_number
 
 def loop_SMS():
     while True:
