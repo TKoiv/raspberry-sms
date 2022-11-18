@@ -10,6 +10,7 @@ import smsSend
 global phone_number
 phone_number = pnumber.phone_number
 
+
 def loop_SMS():
     while True:
         smsCom.SMS.ReceiveShortMessage()
