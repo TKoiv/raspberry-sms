@@ -5,6 +5,7 @@ import smsCom
 import time
 from multiprocessing import Process
 import phonenumber as pnumber
+import smsSend
 
 global phone_number
 phone_number = pnumber.phone_number
@@ -18,7 +19,7 @@ def loop_USER():
     while True:
         now = datetime.now()
         time = now.strftime("%H:%M")
-        if (time > "01:00" and time < "01:30"):
+        if (time > "12:00" and time < "12:30"):
             while i < 2:
                 print("\nUsers deleted")
                 sqlite_user.removeUser()
@@ -43,4 +44,12 @@ if __name__ == "__main__":
             lockCounter = pinCode.PinCode.pin()
             if lockCounter == 3:
                 print("Too many gues login denied!")
-                break
+                txt_message = str("Too many gues login denied!")
+                smsSend.SendShortMessage(phone_number,txt_message)
+                continue
+
+
+            
+    #print(phone_number)
+    #print(txt_message)
+    

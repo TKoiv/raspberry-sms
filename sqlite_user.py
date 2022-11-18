@@ -5,24 +5,14 @@ from PasswordMaker import PasswordMaker
 from datetime import datetime
 from datetime import datetime, timedelta
 import smsSend
+import phonenumber as pnumber
 
 conn = sqlite3.connect('Lock.db')
 
 c = conn.cursor()
 global phone_number
-phone_number = '+358407308301'
-
-
-
-#c.execute(""" CREATE TABLE user (
-#            pinCode INTEGER,
-#            perioid INTEGER,
-
-
-#            )""") 
-
-            
-
+phone_number = pnumber.phone_number
+     
 
 def addUser():
     now = datetime.now()
@@ -74,24 +64,6 @@ def removeUser():
     conn.commit()
     conn.close()
 
-
-
-#removeUser()
-
-#addUser()
-#c.execute("INSERT INTO user VALUES (NULL,{}, 1)".format(2188))
-#pinkoodi69 = getUser(6425)
-
-#print(pinkoodi69)
-#c.execute("SELECT * FROM user where pinCode={} ".format(6425))
-#print(c.fetchall())
-#c.execute("SELECT * FROM user")
-
-#c.fetchall()
-#c.fetchmany(5)
-
-#c.execute("SELECT pinCode FROM user where pinCode={}".format(6425))
-#print(c.fetchall())
 
 conn.commit()
 

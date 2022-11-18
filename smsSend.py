@@ -12,8 +12,6 @@ power_key = 6
 rec_buff = ''
 time_count = 0
 
-phone_number = '0407308301'
-text_message = ''
 
 def power_on(power_key):
 	print('SIM7600X is starting:')
@@ -56,6 +54,3 @@ def send_at2(command,back,timeout):
 	else:
 		print(rec_buff.decode())
 		return 1
-
-#txt_message = "Testi viesti"
-#SendShortMessage(phone_number,txt_message)
